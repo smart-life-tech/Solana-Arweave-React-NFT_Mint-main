@@ -5,7 +5,7 @@ export const Header = () => {
     <AppBar position="static" style={{ backgroundColor: "#000000" }} sx={{ mb: 3 }}>
       <Container maxWidth="md">
         <Toolbar>
-          <Typography>rootlabs Mint NFT  (Arweave and Solana Chain)</Typography>
+          <Typography>rootlabs Mint NFT  ( Solana Chain)</Typography>
         </Toolbar>
       </Container>
     </AppBar>
