@@ -98,7 +98,7 @@ export const ConnectWallet = () => {
         </Grid>
         <Grid item xs={3}>
           <Button variant="outlined" color="primary" onClick={airdrop}>
-            Airdrop
+            Airdrop 1 sol
           </Button>
         </Grid>
       </Grid>
