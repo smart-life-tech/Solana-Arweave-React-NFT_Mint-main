@@ -8,7 +8,7 @@ export const Footer = () => {
         <Link href="https://github.com/256hax/solana-arweave-react-mint-nft-example" target="_blank">
           <img src={`${process.env.PUBLIC_URL}/GitHub-Mark-32px.png`} />
         </Link>
-        <Typography>by <Link href="https://twitter.com/256hax" target="_blank">256hax</Link></Typography>
+        <Typography>by <Link href="https://twitter.com/256hax" target="_blank">3d root labs</Link></Typography>
       </Container>
     </Box>
   );
