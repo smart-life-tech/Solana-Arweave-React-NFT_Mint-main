@@ -1,5 +1,6 @@
 import { useContext, useState, useEffect } from 'react';
 import { AnchorProvider } from "@project-serum/anchor";
+import {Buffer} from 'buffer';
 import { actions } from '@metaplex/js';
 import {
   Box,
@@ -19,9 +20,10 @@ import { getArweaveTransactionUrl } from '../../helpers/arweave';
 import { SolanaClusterContext } from '../../providers/SolanaCluster';
 import { getSolanaTransactionUrl } from '../../helpers/solana';
 import { MintEdition } from './MintEdition';
-
+window.Buffer = window.Buffer || require("buffer").Buffer;
 // For "Property 'solana' does not exist on type 'Window & typeof globalThis'" error.
 interface Window {
+  Buffer: any;
   solana: any
 }
 declare var window: Window
