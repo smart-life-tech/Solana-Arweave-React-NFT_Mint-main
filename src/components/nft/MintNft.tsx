@@ -37,14 +37,14 @@ export const MintNft = () => {
   const [valueNftImage, setNftImage] = useState('');
 
   useEffect(() => {
-    const getNftImage = async() => {
+    const getNftImage = async () => {
       const tx_api_get_decoded = await arweave.api.get('/' + valueArTransactionId);
       setNftImage(tx_api_get_decoded.data.image);
     };
     getNftImage();
   }, []);
 
-  const getProvider = async() => {
+  const getProvider = async () => {
     const wallet = window.solana;
 
     const provider = new AnchorProvider(
@@ -53,21 +53,22 @@ export const MintNft = () => {
     return provider;
   };
 
-  const sendTransaction = async() => {
+  const sendTransaction = async () => {
+    console.log("mintNftResponse.mint.toString()");
     const provider = await getProvider();
-
+    console.log(provider);
     // Note:
     //  Uploading Arweave json data need to comply Token Metadata Starndard(Metaplex).
     //  Details: https://docs.metaplex.com/token-metadata/specification
     //  Example: https://arweave.net/3wXyF1wvK6ARJ_9ue-O58CMuXrz5nyHEiPFQ6z5q02E
-
+    
     const mintNftResponse = await actions.mintNFT({
       connection,
       wallet: provider.wallet, // It need to match your wallet and creators address of Metadata.
       uri: getArweaveTransactionUrl(arweave.api.config, valueArTransactionId),
       maxSupply: Number(valueMaxSupply),
     });
-
+    console.log("mintNftResponse.mint.toString()ggg");
     setSolTransactionId(mintNftResponse.mint.toString());
 
     console.log('mintNftResponse =>', mintNftResponse);
@@ -76,7 +77,7 @@ export const MintNft = () => {
     console.log('edition =>', mintNftResponse.edition.toString());
   };
 
-  return(
+  return (
     <Box>
       <Box sx={{ mb: 2 }}>
         <Typography>
@@ -119,12 +120,12 @@ export const MintNft = () => {
       <Box sx={{ mb: 4 }}>
         <Grid container>
           <Grid item xs={4}>
-            <Button variant="contained" color="primary" onClick={sendTransaction}>Mint NFT (wait a sec)</Button>
+            <Button variant="contained" color="primary" onClick={sendTransaction}>Mint NFT now(wait a sec)</Button>
           </Grid>
         </Grid>
         <Grid container sx={{ mt: 2 }}>
           <Typography>
-            Solana Transaction ID: &nbsp;
+            Solana Transactions ID: &nbsp;
             <Link href={getSolanaTransactionUrl(connection, valueSolTransactionId)} target="_blank">
               {valueSolTransactionId}
             </Link>
