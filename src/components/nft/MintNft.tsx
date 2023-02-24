@@ -109,7 +109,7 @@ export const MintNft = () => {
       </Box>
 
       <Box>
-        <Card sx={{ maxWidth: 4000,maxHeight:4000, mb: 4, ml: 1 }}>
+        <Card sx={{ maxWidth: 200, mb: 4, ml: 1 }}>
           <CardMedia
             component="img"
             alt="Mint NFT Image"
