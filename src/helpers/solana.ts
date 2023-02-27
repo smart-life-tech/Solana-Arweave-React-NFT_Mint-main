@@ -9,8 +9,9 @@ import { Cluster } from '../providers/SolanaCluster';
 */
 export const getSolanaTransactionUrl = (connection: any, id: string) => {
   const explorerBaseUrl = 'https://explorer.solana.com/address/';
-
+  console.log(connection.rpcEndpoint);
   switch(connection.rpcEndpoint) {
+   
     case Cluster.devnet: {
       const url = explorerBaseUrl + id + '?cluster=devnet';
       return url;
@@ -23,5 +24,6 @@ export const getSolanaTransactionUrl = (connection: any, id: string) => {
       const url = explorerBaseUrl + id;
       return url
     }
+    
   }
 };

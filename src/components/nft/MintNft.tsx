@@ -59,6 +59,7 @@ export const MintNft = () => {
     console.log("mintNftResponse.mint.toString()");
     const provider = await getProvider();
     console.log(provider);
+    console.log(connection);
     // Note:
     //  Uploading Arweave json data need to comply Token Metadata Starndard(Metaplex).
     //  Details: https://docs.metaplex.com/token-metadata/specification
